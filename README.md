@@ -11,8 +11,3 @@ Op Spark Bootcamp
 7) In terminal, type => os install
 8) Select bootcamp session
 9) Select project to install
-
-## How to save work to github repository
-1) In terminal, type => git add -A
-2) In terminal, type => git commit -m "description"
-3) In terminal, type => git push

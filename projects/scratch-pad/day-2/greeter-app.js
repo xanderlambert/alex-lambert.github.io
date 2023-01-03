@@ -35,7 +35,18 @@
 
 function greeter(hour) {
     // YOUR CODE BELOW HERE //
-    
+    if (hour > 0 && ho11)
+ * // 
+ * Good Morning!
+ *
+ * // hour is 12-16
+ * Good Afternoon! 
+ *
+ * // hour is 17-21
+ * Good Evening!
+ *
+ * // hour is 22-24 
+ * Good Night!
     
     
     
