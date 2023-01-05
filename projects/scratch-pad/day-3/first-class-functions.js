@@ -51,10 +51,13 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    return function (str) {
+        if (str[0].toUpperCase() === startsWith.toUpperCase()){
+          return true;
+        } else {
+          return false;
+        }
+    }
     // YOUR CODE ABOVE HERE //
 }
 
@@ -65,7 +68,13 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
+    return function (str) {
+        if (str[str.length -1].toUpperCase() === endsWith.toUpperCase()){
+          return true;
+        } else {
+          return false;
+        }
+    }
     
     
     
@@ -78,12 +87,16 @@ function createEndsWithFilter(endsWith) {
  * 
  * TIP: You need to loop over the Strings, right? We need to pass each String to 
  * the modify Function, but we need to collect the results into some collection.
- //imagine modify IS a function
+ //imagine modify IS a function*/
+
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+    let arr =[];
+    for (var i = 0; i < strings.length; i++) {
+        let newStr = modify(strings[i]);
+        arr.push(newStr);
+    }
+    return arr;
     
     // YOUR CODE ABOVE HERE //
 }
@@ -96,10 +109,22 @@ function modifyStrings(strings, modify) {
  * begin with "C", or they are all exclaimations that end with "!".
  * 
  * TIP: You need to loop over the Strings, right? And pass them to the test?
- //imagine modify IS a function
+ //imagine modify IS a function */
+
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    
+    let arr = [];
+    for (var i = 0; i < strings.length; i++) {
+        let newStr = test(strings[i]);
+        arr.push(newStr);
+    }
+    for (var i = 0; i < arr.length; i++) {
+      if (arr.includes(false)) {
+        return false;
+      } else {
+        return true;
+      }
+    }
     
     
     
