@@ -22,11 +22,21 @@
  *  c. you'll wanna make use of the push() method of Array.
  */
 function range(start, end) {
-    // YOUR CODE GOES BELOW HERE //
+    // // YOUR CODE GOES BELOW HERE //
+    let arr = [];
+    if (start < end) {
+        for (var i = start; i <= end; i++) {
+            arr.push(i);
+        }
+        return arr;
+    } else {
+        for (var i = start; i >= end; i--) {
+            arr.push(i);
+        }
+        return arr;
+    }
     
-    
-    
-    
+   
     // YOUR CODE GOES ABOVE HERE //
 }
 
