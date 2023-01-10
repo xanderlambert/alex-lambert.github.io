@@ -78,10 +78,6 @@ console.log(animal);
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-// 6. [ ] Using a random index from this function that you just created, get a random animal and add its `name` to `friends`.
-// 7. [ ] `console.log` `friends`.
-// 8. [ ] Using **bracket notation**, add the `friends` list as a **property** also named `friends` on one of the animals in the `animals` array
-// 9. [ ] `console.log` your work.
 
 var friends = [];
 //array for easy manipulation and reordering of friends list like myspace
@@ -98,7 +94,6 @@ console.log(animals);
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"
  */
-
 
 
 //////////////////////////////////////////////////////////////////////
