@@ -83,7 +83,7 @@ var friends = [];
 //array for easy manipulation and reordering of friends list like myspace
 
 function getRandom(array) {
-  let x = Math.random() * array.length;
+  let x = Math.random() * (array.length - 1);
   return Math.round(x);
 }
 friends.push(animals[getRandom(animals)].name);
