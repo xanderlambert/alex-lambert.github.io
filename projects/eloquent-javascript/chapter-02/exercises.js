@@ -34,16 +34,18 @@ function fizzBuzz(x, y) {
 ////////////////////////////////////////////////////////////////////////////////
 //with parameter for chessboard depth
 function drawChessboard(x) {
+  var size = x;
   var board = "";
-  for (let i = 1; i <= x; i++) {
-    if (i % 2 === 0){
-      board += Array(x + 1).join("# ") + '\n';
-    } else {
-      board += Array(x + 1).join(" #") + '\n';
+  for (var y = 0; y < size; y++) {  
+    for (var x = 0; x < size; x++) {
+      if ((x + y) % 2 == 0)
+        board += " ";
+      else
+        board += "#";
     }
-    
+    board += "\n";
   }
-  console.log(board);
+console.log(board);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

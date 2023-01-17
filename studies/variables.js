@@ -1,5 +1,5 @@
 
- // VARIABLES:
+// VARIABLES:
 
 //  0: (INTRO) Variables are named container for data in Javascript.
 //  Variables point to specific data of any type and allow for storage and retrieval of that data within a progam. These values can be changed
