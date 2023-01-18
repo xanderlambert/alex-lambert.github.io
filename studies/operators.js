@@ -1,69 +1,34 @@
-// OPERATORS:
-
-_.identity = function(value) {
-    return value;
-}
-
-_.each = function(collection, func) {
-     if(Array.isArray(collection)) {
-        for (let i = 0; i < collection.length; i++) {
-            func(collection[i], i, collection);
-        }
-     } else {
-        for (let key in collection) {
-            func(collection[key], key, collection);
-        }
-     }
-}
-
-//  0: (INTRO) Variables are named container for data in Javascript.
-//  Variables point to specific data of any type and allow for storage and retrieval of that data within a progam. These values can be changed
-//  and manipulated throughout a program and give us a name to 'tag" them to.
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/** OPERATORS:
+ * 
+ 0: (INTRO) Operators produce some result from manipulating a value or operand.
+ Operators are used to assign & compare values, perform arithmetic, or apply logic. * */ 
 
 //1.Assignment Operators (= += -= *= /= %= **= )
-//The Assignment Operators assign a value to OR update the value of a variable.
-var petNum = 2;
-petNum = 3;
-console.log(petNum); //=>
+//The Assignment Operators assign a value to OR update the value of a variable based on the first arithmetic symbol of the operator.
+let num = 2; //assigning num to 2;
+num += 3; //adds the two sides and sets num equal to result
+console.log(num); //=> logs 5
+num *= 10; //multiplies the two sides and sets num equal to result
+console.log(num); //=> logs 50
+num = 1; ////reassigning num to 1;
+console.log(num); //=> logs 1
 
-//This variable has been declared but is not yet initialized, meaning it is undefined and will appear so if logged to the console. 
-console.log(petName) //=> logs undefined.
- 
-// Assignment/Initialization 
-//pointing the variable to a specified value. This is done with the assignment operator '='.
-petName = 'Remi';
-console.log(petName); //=> logs 'Remi'
- 
-//Reassignment
-//pointing a previously initialized value to a new one.
-petName = 'Sarge';
-console.log(petName); //=> logs 'Sarge'
-//variables can be assigned any data of any data type but const cannot be reassigned.
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//2.Arithmetic Operators (+ - * / % **)
+//The Arithmetic Operators perform arithmetic on a value.
+let val = 2 + 2; //addition operator
+console.log(val); //=> logs 4
+let val2 = val * 10; //multiplication operator
+console.log(val2); //=> logs 40
+let val3 = val2 % 4; //remainder/modulo operator
+console.log(val3); //=> logs 0(remainder)
 
-// 2.Arithmetic Operators
-// Arithmetic Operators are used to perform math.
+//3.Comparison Operators (> < >= <= === ! )
+//The Comparison Operators assign a value to OR update the value of a variable.
+let num = 2;
+num += 3;
+console.log(num); //=> logs 5
+num *= 10;
+console.log(num); //=> logs 50
+num = 1;
+console.log(num); //=> logs 1
 
-// 3.Comparison Operators
-// 4.Logical Operators
-// 5.Unary Operators
-// 6.Ternary Operators
-
-// Const creates a constant, a variable that cannot be changed once initialized. 
-const myName = 'Alex';
-console.log(myName); //=> logs'Alex'
-myName = 'Micheal Jordan';
-console.log(myName); //=> logs TypeError: Assignment to constant variable.' This is because constants cannot be reassigned.
-
-// Var & let can be reassigned. 
-var yourName = 'Alexander';
-console.log(yourName); //=> logs'Alexander'
-yourName = 'Micheal Jordan';
-console.log(yourName); //=> 'Micheal Jordan'
-
-let yourName = 'AL';
-console.log(yourName); //=> logs'AL'
-yourName = 'MJ';
-console.log(yourName); //=> 'MJ
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
