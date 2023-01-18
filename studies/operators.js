@@ -24,11 +24,11 @@ console.log(val3); //=> logs 0(remainder)
 
 //3.Comparison Operators (> < >= <= === ! )
 //The Comparison Operators assign a value to OR update the value of a variable.
-let num = 2;
-num += 3;
-console.log(num); //=> logs 5
-num *= 10;
-console.log(num); //=> logs 50
-num = 1;
-console.log(num); //=> logs 1
+// let num = 2;
+// num += 3;
+// console.log(num); //=> logs 5
+// num *= 10;
+// console.log(num); //=> logs 50
+// num = 1;
+// console.log(num); //=> logs 1
 

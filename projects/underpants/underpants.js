@@ -334,6 +334,18 @@ _.map = function(collection, func) {
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
+_.pluck = function(array, prop) {
+    let result = _.map(array, function(current){
+        if (current.hasOwnProperty(prop)) {
+            return current[prop];
+        }
+    })
+    return result;
+}
+// _.pluck = function(array, prop) {
+//     let result = array.map(({ prop }) => prop)
+//     return result
+// }
 
 
 /** _.every
@@ -409,7 +421,38 @@ _.every = function(collection, func) {
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
-
+_.some = function(collection, func) {
+    if (Array.isArray(collection)) {
+        if (func === undefined) {
+            for (let i = 0; i < collection.length; i++) {
+                if (collection[i]) {
+                    return true;
+                }
+            }
+        } else {
+            for (let i = 0; i < collection.length; i++) {
+                if (func(collection[i], i, collection)) {
+                    return true;
+                }
+            }
+        }
+    } else {
+        if(func === undefined) {
+            for (let key in collection) {
+                if (collection[key]) {
+                    return true;
+                }
+            }    
+        } else { 
+            for (let key in collection) {
+                if (func(collection[key], key, collection)) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
 
 /** _.reduce  ***will be demonstrated in class***
 * Arguments:
@@ -430,6 +473,24 @@ _.every = function(collection, func) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+_.reduce = function(array, func, seed) {
+    let result;
+//determine if no seed
+    if (seed === undefined) {
+        result = array[0];
+        for (let i = 1; i < array.length; i++) {
+            result = func(result, array[i], i);
+        }
+    } else {
+        result = seed;
+        for (let i = 0; i < array.length; i++) {
+            result = func(result, array[i], i);
+        }
+    }
+    //else there is no seed
+    return result;
+}
+
 
 /** _.extend
 * Arguments:
@@ -445,6 +506,9 @@ _.every = function(collection, func) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+_.extend = (...args) => Object.assign(...args);
+
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
