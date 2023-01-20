@@ -52,13 +52,13 @@ console.log(5 === 5); //=> logs true
 //4.Logical Operators (&& || !)
 //Logical Operators 
 
-let num = 2; //assigning num to 2;
-num += 3; //adds the two sides and sets num equal to result
-console.log(num); //=> logs 5
-num *= 10; //multiplies the two sides and sets num equal to result
-console.log(num); //=> logs 50
-num = 1; ////reassigning num to 1;
-console.log(num); //=> logs 1
+let num1 = 2; //assigning num to 2;
+num1 += 3; //adds the two sides and sets num equal to result
+console.log(num1); //=> logs 5
+num1 *= 10; //multiplies the two sides and sets num equal to result
+console.log(num1); //=> logs 50
+num1 = 1; ////reassigning num to 1;
+console.log(num1); //=> logs 1
 
 //The bang operator ! returns the reverse of the logic follwing it.
 console.log(!(1 < 10)); //=> logs false
