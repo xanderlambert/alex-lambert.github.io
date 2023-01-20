@@ -84,21 +84,52 @@ var firstLetterCount = function(array, char) {
 
 var friendFirstLetterCount = function(array, customer, char) {
     let count = 0;
-    for ( let i =0; i < array.length; i++) {
-        if (array[i].name === customer) {
-            for (let ii = 0; ii < array[i].friends[ii].name[0]; i++) {
-                if (array[i].friends[ii].name[0] === char) {
+    for (let i =0; i < array.length; i++) {
+        if (array[i].name.toUpperCase() === customer.toUpperCase()) {
+            for (let j = 0; j < array[i].friends.length; j++) {
+                if (array[i].friends[j].name[0].toUpperCase() === char.toUpperCase()) {
                     count++;
                 }
             }
         }
+
     }
     return count;
 };
 
-var friendsCount;
+var friendsCount = function(array, name) {
+    let newArr =[];
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].friends.length; j++) {
+            if (array[i].friends[j].name === name) {
+                    newArr.push(array[i].name);
+                }
+            }
+        
 
-var topThreeTags;
+    }
+    return newArr;
+};
+
+var topThreeTags = function(array) {
+    let newArr =[];
+    let newObj = {};
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].tags.length; j++) {
+            newArr.push(array[i].tags[j]);
+            }
+    }
+    for (let i = 0; i < newArr.length; i++) {
+        if (newArr[i] in newObj) {
+            newObj[newArr[i]] += 1;
+        } else {
+            newObj[newArr[i]] = 1;
+        }
+    }
+    let keysSorted = Object.keys(newObj).sort((a, b) => newObj[b] - newObj[a]);
+    keysSorted.length = 3;
+    return keysSorted;
+};
 
 var genderCount;
 
