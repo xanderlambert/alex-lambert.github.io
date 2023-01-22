@@ -48,18 +48,50 @@ console.log(5 === '5'); //=> logs false
 console.log(5 === 5); //=> logs true
 
 
-
 //4.Logical Operators (&& || !)
-//Logical Operators 
+//Logical Operators return a boolean dependent upon the values to each side of them.
+//The && operator returns true if both sides are true; false otherwise.
+//The || operator returns true if even one side is true; false otherwise.
 
-let num1 = 2; //assigning num to 2;
-num1 += 3; //adds the two sides and sets num equal to result
-console.log(num1); //=> logs 5
-num1 *= 10; //multiplies the two sides and sets num equal to result
-console.log(num1); //=> logs 50
-num1 = 1; ////reassigning num to 1;
-console.log(num1); //=> logs 1
+console.log((1 > 0) && (2 > 0)); //=> logs true
+console.log((1 > 0) || (2 > 0)); //=> logs true
+
+console.log((1 < 0) && (2 > 0)); //=> logs false
+console.log((1 < 0) || (2 > 0)); //=> logs true
+
+console.log((1 < 0) && (2 < 0)); //=> logs false
+console.log((1 < 0) || (2 < 0)); //=> logs false
+
+//5. Unary Operators (!, typeOf, -)
+//Unary Operators execute on only one operand.
 
 //The bang operator ! returns the reverse of the logic follwing it.
 console.log(!(1 < 10)); //=> logs false
+console.log(!false); //=> logs true
+
+//typeOf returns a string describing the datatype of the value following it. 
+console.log(typeof 3); //=> logs 'number'
+//typeOf does not differentiate between objects, arrays & null.
+console.log(typeof []); //=> logs 'object'
+console.log(typeof {}); //=> logs 'object'
+console.log(typeof null); //=> logs 'object'
+
+//-The negative operator can change a value to negative or to positive, if it was previously negative, similar to *-1 in math.
+const z = -5;
+console.log(-z); //=> logs 5
+
+
+//6. Ternary operator (a ? b : c)
+//he conditional (ternary) operator is the only JavaScript operator that takes three operands.
+//a: a condition followed by a question mark (?),
+//b: an expression to execute if the condition is truthy followed by a colon (:),
+//c: and expression to execute if the condition is falsy. This operator is often used as an alternative to an if-else statement.
+
+function costCalc(membership) {
+  return (membership ? '$1' : '$6');
+}
+console.log(costCalc(true)); //=> logs '$1'
+console.log(costCalc(false)); //=> logs '$6'
+
+
 
