@@ -155,13 +155,11 @@ _.indexOf = function(arr, val) {
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 _.contains = function(arr, val) {
-
+    let x = false;
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === val) {
-            return true;
-        } 
+        (arr[i] === val) ? x = true : x;    
     }
-    return false;
+    return x;
 }
 
 /** _.each
