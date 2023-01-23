@@ -1,7 +1,7 @@
-// *************** _. before vars or no?
+
 /***
 * identity: takes an input value and returns it, unchanged.
-* 
+
 * @param {Any} value: The input value that will be returned as is.
 */ 
 _.identity = function(value) {
@@ -12,6 +12,7 @@ module.exports.identity = identity;
 
 /***
 * typeOf: Returns the data type of the input <value> as a string
+
 * @param {Any} value: The value for which type is to be determined.
 */ 
 _.typeOf = function(value) {
@@ -112,6 +113,7 @@ module.exports.each = each;
 
 /** contains: Loops over a given <array> to determine whether the <value> exists within the <array>.
 * Returns true if <array> contains <value>. Returns false otherwise.
+*
 * @param {Array} arr: The array over which to search.
 * @param {Value} val: The value that is being searched for. 
 */
@@ -126,6 +128,7 @@ module.exports.contains = contains;
 
 
 /** _.unique: Loops over a given <array> and returns a new array of all elements from <array> with duplicates removed.
+* 
 * @param {Array} arr: The intial array that duplicates will be removed from.
 */
 _.unique = function(arr) {
@@ -141,6 +144,7 @@ module.exports.unique = unique;
 
 
 /** filter: Loops over a given <array> and returns a new array of elements for which calling <function> returned true.
+* 
 * @param {Array} arr: The initial array in which each element will be tested with <function> in order to return true or false.
 * @param {Function} func: The <function> through which <array> element will be passed.
 */
@@ -157,6 +161,7 @@ module.exports.filter = filter;
 
 
 /** reject: Loops over a given <array> and returns a new array of elements for which calling <function> returned false.
+* 
 * @param {Array} arr: The initial array in which each element will be tested with <function> in order to return true or false.
 * @param {Function} func: The <function> through which <array> element will be passed.
 */
@@ -173,6 +178,7 @@ module.exports.reject = reject;
 
 
 /** _.partition: Loops over a given <array> and returns a new array partitioned into 2 arrays. One new array for each truthy and falsey results from passing <array> elements to <function>.
+* 
 * @param {Array} arr: The initial array in which each element will be tested with <function> in order to return true or false.
 * @param {Function} func: The <function> through which <array> element will be passed.
 */
@@ -192,6 +198,7 @@ module.exports.partition = partition;
 
 
 /** map: Returns a new array with the results from calling <function> for each element in <collection>.
+* 
 * @param {Collection} collection: The initial <collection> in which each element will be tested with <function> in order to return a result.
 * @param {Function} func: The <function> through which <collection> elements will be passed.
 */
@@ -213,6 +220,7 @@ module.exports.map = map;
 
 
 /** pluck: Return an array containing the value of <property> for every element in <array>
+* 
 * @param {Array of objects} array: The initial <array> of objects which must be searched to return the <property> values.
 * @param {Property} prop: The <property> searched for within an object contained within the <array>.
 */
@@ -228,25 +236,11 @@ module.exports.pluck = pluck;
 
 
 
-/** _.every
-* Arguments:
-*   1) A collection
-*   2) A function
-* Objectives:
-*   1) Call <function> for every element of <collection> with the paramaters:
-*      if <collection> is an array:
-*          current element, it's index, <collection>
-*      if <collection> is an object:
-*          current value, current key, <collection>
-*   2) If the return value of calling <function> for every element is true, return true
-*   3) If even one of them returns false, return false
-*   4) If <function> is not provided, return true if every element is truthy, otherwise return false
-* Edge Cases:
-*   1) what if <function> doesn't return a boolean
-*   2) What if <function> is not given?
-* Examples:
-*   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
-*   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
+/** _.every: Loops through a <collection>, passing each element into <function> and returns true if the return value of calling <function> for every element is true. Returns false otherwise.
+If <function> is not provided, returns true if every element is truthy, otherwise returns false
+*
+* @param {Collection} collection: The <collection> that is iterated through & each element passed through <function> to determine if true or false.
+* @param {Function} func: The <function> through which each element is passed, determined to be true or false.
 */
 _.every = function(collection, func) {
     if (Array.isArray(collection)) {
@@ -283,25 +277,11 @@ _.every = function(collection, func) {
 module.exports.every = every;
 
 
-/** _.some
-* Arguments:
-*   1) A collection
-*   2) A function
-* Objectives:
-*   1) Call <function> for every element of <collection> with the paramaters:
-*       if <collection> is an array:
-*        current element, it's index, <collection>
-*       if <collection> is an object:
-*        current value, current key, <collection>
-*   2) If the return value of calling <function> is true for at least one element, return true
-*   3) If it is false for all elements, return false
-*   4) If <function> is not provided return true if at least one element is truthy, otherwise return false
-* Edge Cases:
-*   1) what if <function> doesn't return a boolean
-*   2) What if <function> is not given?
-* Examples:
-*   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
-*   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
+/** _.some: Loops through a <collection>, passing each element into <function> and returns true if the return value of calling <function> on any element is true. Returns false otherwise.
+If <function> is not provided, returns true if at least one element is truthy, otherwise returns false.
+*
+* @param {Collection} collection: The <collection> that is iterated through & each element passed through <function> to determine if true or false.
+* @param {Function} func: The <function> through which each element is passed, determined to be true or false.
 */
 _.some = function(collection, func) {
     if (Array.isArray(collection)) {
@@ -339,27 +319,18 @@ module.exports.some = some;
 
 
 
-/** _.reduce  ***will be demonstrated in class***
-* Arguments:
-*   1) An array
-*   2) A function
-*   3) A seed
-* Objectives:
-*   1) Call <function> for every element in <collection> passing the arguments:
-*         previous result, element, index
-*   2) Use the return value of <function> as the "previous result"
-*      for the next iteration
-*   3) On the very first iteration, use <seed> as the "previous result"
-*   4) If no <seed> was given, use the first element/value of <collection> as <seed> and continue to the next element
-*   5) After the last iteration, return the return value of the final <function> call
-* Edge Cases:
-*   1) What if <seed> is not given?
-* Examples:
-*   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
+/** reduce:  Calls <function> for every element in <collection> passing the arguments: previous result, element, index.
+* Uses the return value of <function> as the "previous result" for the next iteration.
+* On the very first iteration, use <seed> as the "previous result".
+* If no <seed> was given, use the first element/value of <collection> as <seed> and continue to the next element
+* After the last iteration, return the return value of the final <function> call.
+*
+* @param {Array} array: The <collection> that is iterated through & each element passed through <function> to determine if true or false.
+* @param {Function} func: The <function> through which each element is passed, determined to be true or false.
+* @param {Seed} seed: The <function> through which each element is passed, determined to be true or false.
 */
 _.reduce = function(array, func, seed) {
     let result;
-//determine if no seed
     if (seed === undefined) {
         result = array[0];
         for (let i = 1; i < array.length; i++) {
@@ -371,25 +342,16 @@ _.reduce = function(array, func, seed) {
             result = func(result, array[i], i);
         }
     }
-    //else there is no seed
     return result;
 }
 module.exports.reduce = reduce;
 
 
-/** _.extend
-* Arguments:
-*   1) An Object
-*   2) An Object
-*   ...Possibly more objects
-* Objectives:
-*   1) Copy properties from <object 2> to <object 1>
-*   2) If more objects are passed in, copy their properties to <object 1> as well, in the order they are passed in.
-*   3) Return the update <object 1>
-* Examples:
-*   var data = {a:"one"};
-*   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
-*   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
+/** _.extend: Copies properties from <object 2> to <object 1> & returns an updated <object1>.
+* Note: here ...args is used to allow as many <object> arguments as needed, passing the last <object> into the next to last <object> until everything is in <object1>. 
+* 
+* @param {Object1} args: The <object> that is being mutated or copied into.
+* @param {Object2} args: The <object> that is being copied into <object1>.
 */
 _.extend = (...args) => Object.assign(...args);
 module.exports.extend = extend;
