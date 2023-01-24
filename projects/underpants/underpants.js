@@ -505,9 +505,11 @@ _.reduce = function(array, func, seed) {
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 
-_.extend = (...args) => Object.assign(...args);
+// _.extend = (...args) => Object.assign(...args);
 
-
+_.extend = function(...args) {
+   return Object.assign(...args);
+} 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////

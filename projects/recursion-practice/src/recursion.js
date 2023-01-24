@@ -106,25 +106,38 @@ var exponent = function(base, exp) {
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
   //base
-  if (n %  === n || n === 1){
-
+  if( n === 0 ) {
+    return false;
   }
-
+  if ( n === 1) {
+    return true;
+  }
+  if (n % 2 !== 0) {
+    return false;
+  }
   //recursion
+  return powerOfTwo(n / 2);
 };
 
 // 9. Write a function that accepts a string a reverses it.
 var reverse = function(string) {
   //base
-
+  if(string.length === 0) {
+    return string;
+  }
   //recursion
+  return reverse(string.substr(1)) + string.charAt(0);
 };
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
   //base
+  string = string.replace(/\W+/g, '');
+  if(string.length === 0 || string.length === 1) return true;
 
-  //recursion
+  if (string.charAt(0).toLowerCase() !== string[string.length - 1].toLowerCase())  return false;
+  
+  return palindrome(string.substring(1, string.length - 1));
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -140,9 +153,13 @@ var modulo = function(x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y) {
-  //base
+  if (y === 0 || x === 0) 
+    return 0;
+  if (y > 0 )
+    return (x + multiply(x, y - 1));
+  if(y < 0 )
+    return -multiply(x, -y);
 
-  //recursion
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or
