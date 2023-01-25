@@ -2,15 +2,29 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-const range = (x, y, inc) => {
-  if(inc < 0) {
+const  range = (x, y, inc) => {
+  let rangeArray=[];
+  if ( x === y ){
     return [];
   }
-  if (x > y)
-    return range(y,x).reverse();
-  else  
-    return x === y ? [] : [x, ...range(x + 1, y)];
+  if(inc > 0){
+    for(var i =x; i <= y; i += inc){
+      rangeArray.push(i);
+    }
+  }
+  else if(inc < 0) {
+    for(var i = x; i >= y; i += inc){
+      rangeArray.push(i);
+    }
+  }
+  else {
+     for(var i = x; i <= y; i++){
+      rangeArray.push(i);
+    }    
+  }
+  return rangeArray;
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // sum /////////////////////////////////////////////////////////////////////////
@@ -31,20 +45,28 @@ function sum(array) {
 // reverseArray ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-// function reverseArray(arr) {
-//   let newArr = [];
-//   for(let i = arr.length - 1; i < 0; i--) {
-//     newArr.push(arr[i]);
-//   }
-//   return newArr;
-// }
+function reverseArray(arr) {
+  let rev = [];
+  for(let i = arr.length - 1; i >= 0; i--){
+      rev.push(arr[i]); 
+  }
+  return rev;
+};
 
 ////////////////////////////////////////////////////////////////////////////////
 // reverseArrayInPlace /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArrayInPlace() {
-
+function reverseArrayInPlace(arr) {
+  if (arr.length === 0) {
+    return [];
+  }
+  for(let i= 0; i <= arr.length/2; i++){
+    var ascendingEl= arr[i];
+    arr[i] = arr[arr.length - 1 - i]
+    arr[arr.length - 1 - i] = ascendingEl;
+  }
+ return arr;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
