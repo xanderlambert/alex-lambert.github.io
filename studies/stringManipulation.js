@@ -1,6 +1,6 @@
 /**
  * STRING MANIPULATION
- * Strings can be manipulated with either operators and methods. 
+ * Strings can be manipulated with either operators or methods. 
  * This allows us to produce a wide variety of resultant strings within specific circumstances.
  */
 
@@ -16,13 +16,20 @@ console.log(fullerName); //=> logs 'Alexander David Lambert'
 //Using template strings
 console.log(`Hi, I'm ${firstName}ander David ${lastName}`); //=> logs 'Hi, I'm Alexander David Lambert'.
 
-//Using String Methods
-console.log('String'.slice(1)); //=> logs 'tring';
-console.log('String'.slice(1)); //=> logs 'tring'; String substring()
-console.log('String'.slice(1)); //=> logs 'tring'; String substr()
-console.log('String'.slice(1)); //=> logs 'tring'; String replace()
-console.log('String'.slice(1)); //=> logs 'tring'; String replaceAll()
-console.log('String'.slice(1)); //=> logs 'tring'; String toUpperCase()
-console.log('String'.slice(1)); //=> logs 'tring'; String charAt()
-console.log('String'.slice(1)); //=> logs 'tring'; String charCodeAt()
-console.log('String'.slice(1)); //=> logs 'tring'; String split()
+/**Using String Methods
+ * Below are several simple examples of string manipulation via string methods.
+ * .Slice() extracts parts of a string and returns the extracted parts in a new string.
+ * .substring() extracts parts of a string and returns the extracted parts in a new string.
+ * .replace() Replaces text in a string, using a regular expression or search string.
+ * .toUpperCase() Converts all the alphabetic characters in a string to uppercase.
+ * .charAt() Returns the character at the specified index.
+ * .charCodeAt() Returns the Unicode value of the character at the specified location.
+ * .split() Splits a string into substrings using the specified separator and return them as an array
+*/
+console.log('String'.slice(1)); //=> logs 'tring'
+console.log('String'.substring(1)); //=> logs 'tring'
+console.log('String'.replace('i', 'o')); //=> logs 'Strong'
+console.log('String'.toUpperCase()); //=> logs 'STRING'
+console.log('String'.charAt(0)); //=> logs 'S'
+console.log('String'.charCodeAt(0)); //=> logs '83'
+console.log('String'.split('')); //=> logs [ 'S', 't', 'r', 'i', 'n', 'g' ]
