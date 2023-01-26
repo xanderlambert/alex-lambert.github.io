@@ -59,11 +59,12 @@ function reverseArray(arr) {
 
 function reverseArrayInPlace(array){
   var x = 0;
-  for (var i =0; i < array.length/2; ++i){
+  for (var i = 0; i < array.length/2; ++i){
       x = array[i];
       array[i] = array[array.length - (i+1)];
       array[array.length - ( i + 1 )] = x; 
   }
+  // return array.reverse();
 }
 ////////////////////////////////////////////////////////////////////////////////
 // arrayToList /////////////////////////////////////////////////////////////////
@@ -123,8 +124,25 @@ function nth(list, n) {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
+function deepEqual(x, y) {
+  if(typeof x !== 'object' && typeof y !== 'object'){
+  return x === y;
+  }
+  if(typeof x !== 'object' || typeof y !== 'object'){
+  return false;
+  }
+  let xKeys = Object.keys(x);
+  let yKeys = Object.keys(y);
 
+  if (xKeys.length !== yKeys.length){
+    return false;
+  }
+  for (let i = 0; i < xKeys.length; i++){
+    if (!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])){
+      return false;
+    }
+  }
+  return true;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
