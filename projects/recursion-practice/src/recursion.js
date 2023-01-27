@@ -390,23 +390,48 @@ var minimizeZeroes = function(array, newArr=[]) {
 // their original sign.  The first number in the index always needs to be positive.
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
-var alternateSign = function(array) {
-  if (array.length === 0) {
-    return newArr;
-  }
-  if(array[0] !== array[1]){
-    newArr.push(array[0]);
-  }
-  return minimizeZeroes(array.slice(1), newArr);
 
+var alternateSign = function(array) {
+  let n = array[0];
+  if(array.length === 0){
+    return [];
+  }
+  if(array.length%2 !== 0){
+    //make next number negative 
+    return [n > 0 ? 0-n : n].concat(alternateSign(array.slice(1)));
+  } else {
+    //make next number positive
+    return [n < 0 ? 0-n : n].concat(alternateSign(array.slice(1)));
+  }
 };
 
 // 35. Given a string, return a string with digits converted to their word equivalent.
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
-var numToText = function(str) {
+var numToText = function(str, newArr=[]) {
+  var x = {
+    '0': 'zero',
+    '1': 'one',
+    '2': 'two',
+    '3': 'three',
+    '4': 'four', 
+    '5': 'five',
+    '6': 'six',
+    '7': 'seven',
+    '8': 'eight',
+    '9': 'nine'
+  }
+  
+  if (str.length === 0){
+    return newArr.join("");
+  }
+  if (x.hasOwnProperty(str[0])){
+    newArr.push(x[str[0]]);  
+  } else {
+    newArr.push(str[0]);
+  }
+  return numToText(str.slice(1), newArr);
 };
-
 // *** EXTRA CREDIT ***
 
 // 36. Return the number of times a tag occurs in the DOM.
