@@ -54,7 +54,7 @@ console.log(x); //=> Logs an error 'ReferenceError: x is not defined'
 
 console.log(x);
 x = 5; 
-var x; //=> logs simply "undefined"
+var x; //=> logs "undefined"
 
 x = 5; 
 var x; 
@@ -71,4 +71,4 @@ function hoisting(x, y) {
     console.log(str2); //=> Logs 'ReferenceError: str2 is not defined'
     console.log(str3); //=> Logs 'ReferenceError: str3 is not defined'
 } 
-hoisting(2, 1)
+hoisting(2, 1);

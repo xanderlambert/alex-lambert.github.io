@@ -67,11 +67,11 @@ console.log(z); //=> logs 100
  * Terminates the execution of statements in the current iteration of the loop, and continues execution of the loop with the next iteration.
  * In the example below the continue statement is executed on the iteration of each even number, skipping those and only logging odds.
  * */
-let text = '';
+let numsStr = '';
 for (let i = 0; i < 10; i++) {
   if (i % 2 === 0) {
     continue;
   }
-  text = text + i;
+  numsStr = numsStr + i;
 }
-console.log(text); // logs 13579
+console.log(numsStr); // => logs 13579
