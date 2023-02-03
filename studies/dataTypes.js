@@ -64,7 +64,7 @@ console.log(remi); //=> logs let remi = {
 // }
 
 //6.Function
-// Functions are comprised of a sequence of statements known as the function body. Values can be passed to a function as 'parameters' and most functions will return some 'value'.
+// Functions are comprised of a sequence of statements known as the function body. Values can be passed to a function as 'parameters' and most functions will return some value.
 // Functions are first-class objects. They can be passed to other functions, returned from functions, and assigned to variables and properties.
 // Functions are distinguished from other objects due do the fact that they can be called.
 function printCopies(str, n){
