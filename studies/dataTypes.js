@@ -2,10 +2,6 @@
  * 
  * JavaScript is known as a dynamic language with dynamic typing. 
  * Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types.
- * 
- * 
- * 
- * 
 **/
 
 /** 1. Number
@@ -30,24 +26,28 @@
 console.log('Alex'); //=> logs 'Alex'
 console.log('Alex' + 'Lambert'); //=> logs 'Alex Lambert'
 
-//3. Boolean
-// A logical datatype that can only have the values of true or false.
-//Conditional statements resolve to boolean values to determine which code is executed next(control flow).
+/** 3. Boolean
+ * A logical datatype that can only have the values of true or false.
+ * Conditional statements resolve to boolean values to determine which code is executed next(control flow).
+ */
 (1 > 10) ? console.log("Boolean resolved to true") : console.log("Boolean resolved to false"); //=> logs "Boolean resolved to false"
 (1 > 0) ? console.log("Boolean resolved to true") : console.log("Boolean resolved to false"); //=> logs "Boolean resolved to true"
 
-//4.Array
-// Arrays are pieces of complex data capable of storing more than one value.
-//
+/** 4.Array
+ * Arrays are pieces of complex data capable of storing more than one value.
+ * Arrays can contain a mix of different data types and are resizaeble.
+ * Arrays are zero indexed, meaning the first element sits at index 0, the second at 1 and so on.
+*/
+const cars = ["GMC", "FORD", "SUBARU"];
+console.log(cars[1]); //=> logs 'FORD'
+cars.push('CHEVY');
+console.log(cars); //=> logs [ 'GMC', 'FORD', 'SUBARU', 'CHEVY' ]
 
-const cars = new Array("Saab", "Volvo", "BMW");
-
-
-
-//5. Object
-//Objects are mutable datatypes that can be seen as a collection of properties.
-//Object properties are key-value pairs.
-//Property keys are usually strings while values can be any datatype, including functions/ methods or other objects, which enables the building of complex data structures.
+/**5. Object
+ * Objects are mutable datatypes that can be seen as a collection of properties.
+ * Object properties are key-value pairs.
+ * Property keys are usually strings while values can be any datatype, including functions/ methods or other objects, which enables the building of complex data structures.
+*/
 let remi = {
     "name": "Remington",
     "species": "dog",
