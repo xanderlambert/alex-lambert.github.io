@@ -132,27 +132,6 @@ var topThreeTags = function(array) {
 };
 
 
-// var genderCount= function(array) {
-//     let newArr =[];
-//     let newObj = {};
-//     //loop through customers array for obj
-//     for (let i = 0; i < array.length; i++) {
-//         //for every obj, push their gender to the new array
-//          newArr.push(array[i].gender);      
-//     }
-//   //loop through newArr, adding elements & keys to newObj ??reduce???
-//     for (let i = 0; i < newArr.length; i++) {
-//         if (newArr[i] in newObj) {
-//             newObj[newArr[i]] += 1;
-//         } else {
-//             newObj[newArr[i]] = 1;
-//         }
-        
-//     }
-//   return newObj;
-
-// }
-
 var genderCount= function(array) {
     let countObj = _.reduce(array, function(acc, current) {
         if (current.gender in acc) {

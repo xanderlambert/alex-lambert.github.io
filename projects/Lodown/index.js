@@ -230,7 +230,7 @@ module.exports.map = map;
 
 
 
-/** pluck: Return an array containing the value of <property> for every element in <array>
+/** pluck: Takes in an array of objects and returns an array containing the value of <property> for every element(object) in <array>
 * 
 * @param {Array of objects} array: The initial <array> of objects which must be searched to return the <property> values.
 * @param {Property} prop: The <property> searched for within an object contained within the <array>.
@@ -341,7 +341,7 @@ module.exports.some = some;
 *
 * @param {Array} array: The <collection> that is iterated through & each element passed through <function> to determine if true or false.
 * @param {Function} func: The <function> through which each element is passed, determined to be true or false.
-* @param {Seed} seed: The <function> through which each element is passed, determined to be true or false.
+* @param {Seed} seed: The seed value is optional, and initializes the result value of the function.
 * @returns {Value} result: The result of accumulating the previous results of <array> elements passed through <function>.
 */
 function reduce(array, func, seed) {

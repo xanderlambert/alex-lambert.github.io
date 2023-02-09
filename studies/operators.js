@@ -13,7 +13,7 @@ console.log(num); //=> logs 50
 num = 1; ////reassigning num to 1;
 console.log(num); //=> logs 1
 
-//2.Arithmetic Operators (+ - * / % **)
+//2.Arithmetic Operators (+ * % - ** /)
 //Arithmetic Operators perform arithmetic on a value.
 let val = 2 + 2; //addition operator
 console.log(val); //=> logs 4
@@ -21,14 +21,19 @@ let val2 = val * 10; //multiplication operator
 console.log(val2); //=> logs 40
 let val3 = val2 % 4; //remainder/modulo operator
 console.log(val3); //=> logs 0(remainder)
+let val4 = val3 - 2; //=> subtraction operator
+console.log(val4); //=> logs -2
+let val5 = val4 ** 4; //exponent operator
+console.log(val5);//=> logs 16
+let val6 = val5 / 4; //division operator
+console.log(val6);//=> logs 4
+
 
 //3.Comparison Operators (> < >= <= == === ! )
 //Comparison Operators are used in logical statements to determine differences (or equality) between variables/values.
 // Comparison operators return a boolean. 
 console.log(1 > 10); //Greater than operator => logs false
 console.log(1 < 10); //Less than operator => logs true
-
-
 let x = 0;
 if ( x >= 0) {
   console.log('this is true');
@@ -42,11 +47,15 @@ if ( y <= 0) {
   console.log('this is false');
 } //=> Less than or equal to operator => logs 'this is 'false'
 
-// == & === compare the two values for equality. === takes datatype into consideration while == does not. != & !==
+// == & === compare the two values for equality. === takes datatype into consideration while == does not. 
 console.log(5 == '5'); //=> logs true
 console.log(5 === '5'); //=> logs false
 console.log(5 === 5); //=> logs true
 
+//!= & !== reverse the logic of the == & === operators. So !== takes datatype into consideration while != does not.
+console.log(5 != '5'); //=> logs false
+console.log(5 !== '5'); //=> logs true
+console.log(5 !== 5); //=> logs false
 
 //4.Logical Operators (&& || !)
 //Logical Operators return a boolean dependent upon the values to each side of them.
